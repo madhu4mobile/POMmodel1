@@ -1,5 +1,5 @@
 /**
- * 
+ * Base class for Pages
  */
 /**
  * @author Madhu
