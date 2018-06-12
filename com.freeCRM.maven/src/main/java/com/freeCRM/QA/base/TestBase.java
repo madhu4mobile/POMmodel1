@@ -67,7 +67,7 @@ public class TestBase {
 
 		// launch url
 		driver.get(prop.getProperty("url"));
-		Log.info("Browser " + browserName + " is launched with URL " + prop.getProperty("url"));
+		//Log.info("Browser " + browserName + " is launched with URL " + prop.getProperty("url"));
 
 	}
 
