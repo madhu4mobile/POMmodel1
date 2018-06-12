@@ -34,7 +34,7 @@ public class TestBase {
 	{
 	try {
 		prop = new Properties();
-		FileInputStream ip = new FileInputStream("M:\\WS\\POMmodel1\\com.freeCRM.maven\\src\\main\\java\\com\\"
+		FileInputStream ip = new FileInputStream("C:\\WS\\POMmodel1\\com.freeCRM.maven\\src\\main\\java\\com\\"
 						+ "freeCRM\\QA\\config\\config.properties");  // path of config prop is completed.
 		prop.load(ip);
 	} catch (FileNotFoundException e)
@@ -47,16 +47,19 @@ public class TestBase {
 		// initialize the browser ..
 		String browserName = prop.getProperty("browser");  // we are getting the type of browser from config props. 
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "M:\\SelRel\\chromedriver.exe");
-			WebDriver driver = new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver.exe");
+			
+			driver = new ChromeDriver();
 		}
 		else if (browserName.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "M:\\SelRel\\geckodriver.exe");
 			driver = new FirefoxDriver();  // driver is already initialized in the constructor.
 		}
 		// Initialize the page launch defaults like maximize and delete cookies... etc
+		System.out.println("1");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
+		System.out.println("2");
 		// to read the preset pageLoadTimeOut value from TestUtils class and use that here.
 		/*String tempVar = prop.getProperty("pageLoadTimeOutDecided") // this reads the PageLoadTimoutValue as string from Config
 		int pageLoadTimeOutTemp =Integer.parseInt(tempVar); // this converts the string to int and stores in tempVar*/

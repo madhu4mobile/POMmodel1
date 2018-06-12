@@ -4,6 +4,7 @@
 package com.freeCRM.QA.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -54,7 +55,9 @@ public class LoginPage extends TestBase { // login page is a child of TestBase c
 	public HomePage login(String un, String pw) { // to enter the username and pw in the fields
 		username.sendKeys(un);
 		password.sendKeys(pw);
-		loginButton.click();
+		Actions action = new Actions(driver);
+		action.moveToElement(loginButton).click().perform();
+		//loginButton.click();
 
 		return new HomePage();  // going to return the object in Homepage.   ??????
 
